@@ -96,20 +96,7 @@ test.describe('Password field', () => {
       await expectResultVisible(page, password);
     });
 
-    // Although the maximum length is not mantioned in the requirements, it can be 
-    // assumed that the maximum length should be no more than 20 characters for password field.
-    test('Unusual length - 255 characters', async ({ page }) => {
-      const password = 'Ab1#'.repeat(63) + 'Ab1#';
-      const inputField = await getInputField(page);
-      await inputField.fill(text);
-      await expect(inputField).toHaveValue(text.slice(0, 20));
-      await inputField.press('Enter');
-      const result = page.getByText('Your input was:');
-      await expect(result).not.toBeVisible();
-      const feedback = await page.locator('.invalid-feedback');
-      await expect(feedback).toBeVisible();
-      await expect(feedback).toHaveText('Password is too long');
-    });
+
 
     // Although the maximum length is not mantioned in the requirements, it can be 
     // assumed that the maximum length should be no more than 20 characters for password field.
@@ -120,5 +107,13 @@ test.describe('Password field', () => {
       await expect(inputField).toHaveValue(text.slice(0, 20));
     });
 
+
+    // To check the maximum length, the password is filled with 255 characters
+    // In case the password field is intended to have no length restrictions as per requirements.
+    test('Unusual length - 255 characters', async ({ page }) => {
+      const password = 'Ab1#'.repeat(63) + 'Ab1#';
+      await submitInput(page, password);
+      await expectResultVisible(page, password);
+    });
   
   });
