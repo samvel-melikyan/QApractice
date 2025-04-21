@@ -12,6 +12,13 @@ test.describe('Inputs', () => {
     await page.goto('/elements/input/simple');
   });
 
+  
+  test('Input field has placeholder', async ({ page }) => {
+    const inputField = await getInputField(page);
+    const placeholder = await inputField.getAttribute('placeholder');
+    expect(placeholder).toBe('Submit me');
+  });
+  
 
   test('Input field contains value', async ({ page }) => {
     const inputField = await getInputField(page);
