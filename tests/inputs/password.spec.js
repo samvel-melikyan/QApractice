@@ -97,7 +97,6 @@ test.describe('Password field', () => {
     });
 
 
-
     // Although the maximum length is not mantioned in the requirements, it can be 
     // assumed that the maximum length should be no more than 20 characters for password field.
     test('More than 20 characters', async ({ page }) => {
