@@ -160,8 +160,4 @@ test.describe('Email field', () => {
         await expectResultVisible(page, email);
     });
 
-
-    
-
-
 });

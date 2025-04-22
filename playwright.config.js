@@ -14,12 +14,11 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   testDir: './tests',
-
+  testIgnore: ['tests/inputs2'],
   retries: 0,
   
   timeout: 30000,
  
-  
   use: {
     baseURL: 'https://www.qa-practice.com',
   },
