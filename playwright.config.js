@@ -28,10 +28,10 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      // use: { 
-      //   ...devices['Desktop Chrome'],
-      //   headless: false, // Run the browser in non-headless mode to see the actions
-      // },
+      use: { 
+        ...devices['Desktop Chrome'],
+        headless: false,  
+      },
     },
 
     // {
