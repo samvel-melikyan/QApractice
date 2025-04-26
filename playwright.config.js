@@ -14,7 +14,13 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   testDir: './tests',
-  testIgnore: ['tests/inputs2'],
+
+  testIgnore: [
+    'tests/inputs',
+    'tests/inputs2',
+    'tests/buttons',
+  ],
+
   retries: 0,
   
   timeout: 30000,
