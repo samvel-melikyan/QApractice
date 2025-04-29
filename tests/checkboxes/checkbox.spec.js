@@ -56,7 +56,7 @@ test.describe('Single checkbox', () => {
         await expect(requarimentsBlock).toHaveAttribute('class', 'collapse show');
         await requariments.click();
         await expect(requarimentsBlock).toHaveAttribute('class', 'collapse');
-      })
+    })
 
 });
 
@@ -173,7 +173,15 @@ test.describe('Checkboxes', () => {
     });
 
 
-
+    test('toggle requariments opens and closes currectly', async ({page}) =>{
+        const requariments = page.locator('#req_header');
+        const requarimentsBlock = page.locator('#req_text');
+        await expect(requarimentsBlock).toHaveAttribute('class', 'collapse');
+        await requariments.click();
+        await expect(requarimentsBlock).toHaveAttribute('class', 'collapse show');
+        await requariments.click();
+        await expect(requarimentsBlock).toHaveAttribute('class', 'collapse');
+    })
 
 
 });
