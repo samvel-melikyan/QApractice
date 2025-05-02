@@ -49,9 +49,6 @@ test.describe('Multiple select', () => {
 
 
 
-
-
-
 function generateMinimalCoverage(placeOptions, howOptions, whenOptions) {
     const cleanedPlaces = placeOptions.filter(Boolean);
     const cleanedHows = howOptions.filter(Boolean);
