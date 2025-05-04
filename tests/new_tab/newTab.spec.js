@@ -1,13 +1,13 @@
 import {test, expect} from '@playwright/test';
 
 
-test.describe.only('New Tab', () => {
+test.describe('New Tab', () => {
     test.beforeEach(async ({page}) => {
         await page.goto('/elements/new_tab/link');  // https://www.qa-practice.com/elements/new_tab/link
     });
     
 
-    test.skip('New tab link', async ({ page }) => {
+    test('New tab link', async ({ page }) => {
         const [secondTab] = await Promise.all([
           page.context().waitForEvent('page'),     // Wait for the new tab
           page.click('#new-page-link')             // Trigger the new tab

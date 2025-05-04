@@ -180,7 +180,7 @@ test.describe('Text Area multiple', () => {
         await expect(requarimentsBlock).toHaveAttribute('class', 'collapse show');
         await requariments.click();
         await expect(requarimentsBlock).toHaveAttribute('class', 'collapse');
-    })
+    });
 
 
 });
